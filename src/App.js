@@ -1,12 +1,10 @@
 import "./App.css";
-import UserContainer from "./props/UserContainer";
-import UserProps from "./props/UserProps";
-import Hobby from "./state/Hobby";
+import Jsx05 from "./tutorial/Jsx05";
 
 function App() {
   return (
     <>
-      <UserContainer />
+      <Jsx05 />
     </>
   );
 }

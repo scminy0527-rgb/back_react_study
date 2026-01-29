@@ -8,12 +8,11 @@ import Lucky from "./Lucky";
 // 성인과 관계 없이 age가 짝수라면 "당첨"을 출력
 
 // 컴포넌트 분리
-const age = 30;
+const age = 16;
 const limitAge = 19;
-const jMsg = "당첨입니다.";
 
 const passComponent = <>{PassComponent(age, limitAge)}</>;
-const jackpot = Lucky(age);
+const jackpot = <>{Lucky(age)}</>;
 
 const Jsx05 = () => {
   return (
