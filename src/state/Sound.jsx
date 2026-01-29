@@ -6,7 +6,7 @@ import React, { useState } from "react";
 const Sound = () => {
   const dogSound = "멍멍";
   const catSound = "냐옹";
-  const ighSound = "꺅";
+  const ighSound = "꽥꽥";
 
   const defaultSound = "울음 소리 종류를 선택하시오";
 
@@ -39,7 +39,7 @@ const Sound = () => {
         <button onClick={setCat}>고양이</button>
       </div>
       <div>
-        <button onClick={setIgh}>규혁이</button>
+        <button onClick={setIgh}>오리</button>
       </div>
     </div>
   );
