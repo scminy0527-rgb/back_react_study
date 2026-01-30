@@ -1,11 +1,11 @@
 import "./App.css";
-import Person from "./state/Person";
-import Jsx05 from "./tutorial/Jsx05";
+import SportContainer from "./map/basic/SportContainer";
+import AttendeanceContainer from "./map/normal/AttendeanceContainer";
 
 function App() {
   return (
     <>
-      <Person />
+      <AttendeanceContainer />
     </>
   );
 }
