@@ -3,6 +3,7 @@ import Attendance from "./Attendance";
 import AttendanceMoney from "./AttendanceMoney";
 
 const AttendeanceContainer = () => {
+  console.log("성능확인용: 출석부 전체 랜더링");
   const attendanceData = [
     { id: 1, name: "석태워줌", isPresent: true, money: 5000 },
     { id: 2, name: "예스규호", isPresent: false, money: 1000 },
@@ -23,6 +24,10 @@ const AttendeanceContainer = () => {
   const attendanceList = attendanceData.map(({ name, isPresent, money }, i) => (
     <Attendance name={name} isPresent={isPresent} money={money} key={i} />
   ));
+
+  // 문제.
+  // 각 컴포넌트를 클릭하면 컴포넌트의 색깔이 파란색으로 변경되고,
+  // 다시 클릭하면 검은색으로 변경
 
   // 출석자의 모든 돈의 합계를 보여주는거
   const moneyWidget = <AttendanceMoney attendanceData={attendanceData} />;

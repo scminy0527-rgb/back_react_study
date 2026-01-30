@@ -7,7 +7,7 @@ const AttendanceMoney = ({ attendanceData }) => {
     0,
   );
 
-  return <div>{totalMoney}원</div>;
+  return <div>{totalMoney.toLocaleString()}원</div>;
 };
 
 export default AttendanceMoney;
