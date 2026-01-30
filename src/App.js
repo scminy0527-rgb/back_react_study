@@ -1,11 +1,10 @@
 import "./App.css";
-import SportContainer from "./map/basic/SportContainer";
-import AttendeanceContainer from "./map/normal/AttendeanceContainer";
+import ProductContainer from "./map/store/ProductContainer";
 
 function App() {
   return (
     <>
-      <AttendeanceContainer />
+      <ProductContainer />
     </>
   );
 }

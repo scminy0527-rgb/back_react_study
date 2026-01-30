@@ -6,7 +6,6 @@ const Attendance = ({ name, isPresent }, key) => {
 
   const clickListener = () => {
     changeClick(!isClicked);
-    console.log(`${name}학생 클릭: ${isClicked}`);
   };
 
   const textColor = { color: isClicked ? "blue" : "black" };
