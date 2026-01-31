@@ -1,10 +1,10 @@
 import "./App.css";
-import ProductContainer from "./map/store/ProductContainer";
+import CheckboxContainer from "./map/store/CheckboxContainer";
 
 function App() {
   return (
     <>
-      <ProductContainer />
+      <CheckboxContainer />
     </>
   );
 }
