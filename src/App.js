@@ -1,10 +1,10 @@
 import "./App.css";
-import ShoppingMallContainer from "./map/extream/ShoppingMallContainer";
+import ContainerAttendance from "./map/normal/practice/ContainerAttendance";
 
 function App() {
   return (
     <>
-      <ShoppingMallContainer />
+      <ContainerAttendance />
     </>
   );
 }
