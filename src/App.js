@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import "./App.css";
-import Check from "./ref/basic/Check";
+import FoodContainer from "./ref/expert/FoodContainer";
 
 function App() {
   return (
     <>
-      <Check />
+      <FoodContainer />
     </>
   );
 }

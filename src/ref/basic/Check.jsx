@@ -34,6 +34,7 @@ const Check = () => {
 
     console.log(id, password);
     // 아이디 검증
+    // 중복 되는거 최대한 줄이기
     if (id) {
       // 불가능 아이디 존재 여부 확인
       const result = inVaildIds.some((email) => id === email);
@@ -48,6 +49,7 @@ const Check = () => {
     setPwCheck(pwResult);
 
     // 중간에 탈락 안되고 여기까지 최종적으로 옴
+    // 결과 표시
     setIsEnd(true);
   };
 
