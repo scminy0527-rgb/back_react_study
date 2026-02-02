@@ -8,7 +8,9 @@ const Name = () => {
   const inputRef = useRef();
 
   // +님 버튼 클릭 여부 (제출 여부)
-  const [isClicked, setClick] = useState(false);
+  // 키도브 이용 해볼 수 있음
+  const [value, setValue] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleOnClick = () => {
     console.log("레퍼런스", inputRef.current);
@@ -18,14 +20,14 @@ const Name = () => {
     // 에서 만 님 이 붙게 하기
     if (!isClicked) {
       inputRef.current.value += "님";
-      setClick(!isClicked);
+      setIsClicked(!isClicked);
     }
   };
 
   // 텍스트 필드 감지
   // 만약 수정을 하는 상황이라면 수정 후 다시 "님"을 붙일 수 있어야함
   const handleOnChange = () => {
-    if (isClicked) setClick(!isClicked);
+    if (isClicked) setIsClicked(!isClicked);
   };
 
   return (
