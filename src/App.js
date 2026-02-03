@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import "./App.css";
-import CheckPr from "./ref/basic/CheckPr";
+import SideEffectWithMap from "./lifecycle/function/sideeffect/SideEffectWithMap";
 
 function App() {
   return (
     <>
-      <CheckPr />
+      <SideEffectWithMap />
     </>
   );
 }
