@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import "./App.css";
-import SideEffectWithMap from "./lifecycle/function/sideeffect/SideEffectWithMap";
+import CharContainer from "./context/basic/CharContainer";
 
 function App() {
   return (
     <>
-      <SideEffectWithMap />
+      <CharContainer />
     </>
   );
 }
