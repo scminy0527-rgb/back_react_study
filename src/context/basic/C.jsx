@@ -2,6 +2,7 @@ import React from "react";
 import CharContext from "./CharContext";
 
 const C = () => {
+  console.log("C 빌드");
   return (
     <div>
       <CharContext.Consumer>

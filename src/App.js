@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import "./App.css";
-import CharContainer from "./context/basic/CharContainer";
+import ParentContainer from "./context/normal/ParentContainer";
 
 function App() {
   return (
     <>
-      <CharContainer />
+      <ParentContainer />
     </>
   );
 }

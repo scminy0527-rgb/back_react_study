@@ -1,10 +1,12 @@
 import React from "react";
-import C from "./C";
+import D from "./D";
 
 const B = () => {
+  console.log("B 빌드");
   return (
     <div>
-      <C />
+      {/* <C /> */}
+      <D />
     </div>
   );
 };
