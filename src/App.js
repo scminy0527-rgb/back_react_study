@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import "./App.css";
-import ParentContainer from "./context/normal/ParentContainer";
+import AnimalsContainer from "./context/expert/AnimalsContainer";
 
 function App() {
   return (
     <>
-      <ParentContainer />
+      <AnimalsContainer />
     </>
   );
 }
