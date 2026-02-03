@@ -22,15 +22,20 @@ export const AnimalsProvider = ({ children }) => {
         setIsDelete([...isDelete, false]);
       },
       remove: (index) => {
+        console.log("삭제 위한 버튼 누름");
         // isDelete 먼저 설정
         const tempIsDelete = [...isDelete];
         tempIsDelete[index] = true;
 
         // animals 본 장 설정
         const tempAnimals = [...animals];
-        tempAnimals.forEach((animal, i) => {});
 
-        // 최종 키 설정
+        // 지우지 않는 거만 다시 새롭게 만들면 됨
+        const newAnimals = tempAnimals.filter((_, i) => !tempIsDelete[i]);
+
+        // 최종 동물 리스트 및 bool 키 설정
+        setAnimals(newAnimals);
+        setIsDelete(tempIsDelete.filter((isDelete) => !isDelete));
       },
     },
   };

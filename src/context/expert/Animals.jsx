@@ -27,7 +27,7 @@ const Animals = () => {
 
   // 기존에 있는 동물들 보여주는 컴포넌트
   const animalsCpn = animals.map((animal, i) => (
-    <Animal animal={animal} index={i} key={i} />
+    <Animal animal={animal} index={i} key={crypto.randomUUID()} />
   ));
 
   return (
