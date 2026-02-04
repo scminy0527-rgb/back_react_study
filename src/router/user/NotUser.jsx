@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
 
+// 다른 페이지로 이동!
 const NotUser = () => {
-  return <div>유저가 아닙니다.</div>;
+  return (
+    <div>
+      비회원
+    </div>
+  );
 };
 
 export default NotUser;

@@ -3,35 +3,40 @@ import { useParams } from "react-router-dom";
 
 const Post = () => {
   const { id } = useParams();
-  console.log("아이디: ", id);
-
   const [post, setPost] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-  // 해당 데이터를 가지고 오기
-  // https://jsonplaceholder.typicode.com/posts/100
-
-  // useEffect 로 데이터 불러오는 initState
   useEffect(() => {
-    console.log(`최초로 아이디 ${id}인 포스터 불러오기`);
-    const getPostData = async () => {
+    const getPost = async () => {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
       );
-      const post = response.json();
+      const post = await response.json();
       return post;
     };
 
-    getPostData().then(setPost).catch(console.error);
+    getPost()
+      .then((post) => {
+        setIsLoading(false);
+        setPost(post);
+      })
+      .catch((err) => {
+        setIsLoading(true);
+        console.error(err);
+      });
   }, []);
 
-  const postComponent = (
+  if (isLoading) {
+    return <p>로딩중...</p>;
+  }
+
+  return (
     <div>
+      Post 컴포넌트!😎
       <h1>{post.id}</h1>
       <h1>{post.title}</h1>
     </div>
   );
-
-  return postComponent;
 };
 
 export default Post;

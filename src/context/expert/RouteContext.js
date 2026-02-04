@@ -1,6 +1,9 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
-const RouteContext = createContext({
+// 생성
+// 초기화
+// 제공
+export const RouteContext = createContext({
   state: {
     previousUrl: "",
     user: {
@@ -16,7 +19,7 @@ const RouteContext = createContext({
   },
 });
 
-export const UserRouteProvider = ({ children }) => {
+export const RouteProvider = ({ children }) => {
   const [previousUrl, setPreviousUrl] = useState("");
   const [user, setUser] = useState({
     userName: "",
@@ -26,13 +29,17 @@ export const UserRouteProvider = ({ children }) => {
   });
 
   const value = {
-    state: { previousUrl, user },
-    actions: { setPreviousUrl, setUser },
+    state: {
+      previousUrl: previousUrl,
+      user: user,
+    },
+    actions: {
+      setPreviousUrl: setPreviousUrl,
+      setUser: setUser,
+    },
   };
 
   return (
     <RouteContext.Provider value={value}>{children}</RouteContext.Provider>
   );
 };
-
-export default RouteContext;
