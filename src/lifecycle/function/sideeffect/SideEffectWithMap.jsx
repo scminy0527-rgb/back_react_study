@@ -11,6 +11,7 @@ const SideEffectWithMap = () => {
   const [isFalse, setIsFalse] = useState(false);
   const [number, setNumber] = useState(0);
 
+  // 페이지 단위로 일정 수량의 데이터를 불러오는걸 실습
   useEffect(() => {
     const getTodos = async () => {
       const response = await fetch(

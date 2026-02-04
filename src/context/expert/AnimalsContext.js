@@ -17,12 +17,12 @@ export const AnimalsProvider = ({ children }) => {
     },
     actions: {
       insert: (animal) => {
-        console.log("동물 추가");
         setAnimals([...animals, animal]);
         setIsDelete([...isDelete, false]);
       },
+
+      // 동물 버튼을 누르면 삭제하는 로직
       remove: (index) => {
-        console.log("삭제 위한 버튼 누름");
         // isDelete 먼저 설정
         const tempIsDelete = [...isDelete];
         tempIsDelete[index] = true;

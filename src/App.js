@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import "./App.css";
-import AnimalsContainer from "./context/expert/AnimalsContainer";
+import { Route, RouterProvider, Routes } from "react-router-dom";
+import router from "./router/routor";
 
 function App() {
   return (
     <>
-      <AnimalsContainer />
+      <RouterProvider router={router} />
     </>
   );
 }

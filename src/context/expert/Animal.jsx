@@ -7,7 +7,6 @@ const Animal = ({ animal, index }, key) => {
   const animalCpn = (
     <p key={key}>
       <button
-        value={"test"}
         onClick={() => {
           remove(index);
         }}

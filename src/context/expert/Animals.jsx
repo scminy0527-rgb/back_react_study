@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { AnimalsContext } from "./AnimalsContext";
 import Animal from "./Animal";
 
@@ -11,6 +11,9 @@ const Animals = () => {
   // input 태그 상태 감지
   const [inputValue, setInputValue] = useState("");
 
+  // 엔터를 쳐서 입력 하면 텍스트필드 내 내용이 비워지게 해야함
+  const animalInputRef = useRef();
+
   // 필드 값 입력 및 엔터 관련 부분
   const onChangeListener = (e) => {
     setInputValue(e.target.value);
@@ -21,13 +24,20 @@ const Animals = () => {
     // const value = e.target.value;
 
     if (key === "Enter") {
+      if (!inputValue) {
+        alert("동물을 입력해주세요");
+        return;
+      }
+      animalInputRef.current.value = "";
       insert(inputValue);
+      setInputValue("");
     }
   };
 
   // 기존에 있는 동물들 보여주는 컴포넌트
+  // crypto.randomUUID()
   const animalsCpn = animals.map((animal, i) => (
-    <Animal animal={animal} index={i} key={crypto.randomUUID()} />
+    <Animal animal={animal} index={i} key={i} />
   ));
 
   return (
@@ -37,6 +47,9 @@ const Animals = () => {
         placeholder="동물을 입력하세요."
         onChange={onChangeListener}
         onKeyDown={enterKeyDownListener}
+        ref={(el) => {
+          animalInputRef.current = el;
+        }}
       />
       {animalsCpn}
     </div>
