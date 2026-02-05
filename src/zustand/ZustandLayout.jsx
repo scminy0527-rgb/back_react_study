@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useAuthStore, { initialMember } from "./store/useAuthStore";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 // 로직 분리 및 부모 자식 간 관계 만들기
 // 해당 페이지는 로그인이 됬는지 안됬는지 보여주는 기능
@@ -14,6 +14,12 @@ const ZustandLayout = () => {
     setCurrentMember,
     setPreviousUrl,
   } = useAuthStore((state) => state);
+
+  // 경로 비뀔 때 마다 이전 경로에다가 경로 넣어라
+  const path = useLocation().pathname;
+  useEffect(() => {
+    setPreviousUrl(path);
+  }, [path]);
 
   return (
     <div>
