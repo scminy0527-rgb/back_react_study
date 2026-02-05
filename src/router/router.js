@@ -10,6 +10,10 @@ import Community from "./detail/Community";
 import NotFound from "./notfound/NotFound";
 import User from "./user/User";
 import NotUser from "./user/NotUser";
+import Zustand01 from "../zustand/Zustand01";
+import ZustandLayout from "../zustand/ZustandLayout";
+import Zustand02 from "../zustand/Zustand02";
+import Zustand03 from "../zustand/Zustand03";
 
 // 구분점!
 // ※path를 통해서도 값을 넘길 수 있다.
@@ -23,19 +27,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Main />
+        element: <Main />,
       },
       {
         path: "/intro",
-        element: <Intro />
+        element: <Intro />,
       },
       {
         path: "/job",
-        element: <Job />
+        element: <Job />,
       },
       {
         path: "/post/:id",
-        element: <Post />
+        element: <Post />,
       },
       {
         path: "/detail",
@@ -43,28 +47,46 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
-            element: <Detail />
+            element: <Detail />,
           },
           {
             path: "community",
-            element: <Community />
-          }
-        ]
+            element: <Community />,
+          },
+        ],
       },
       {
         path: "/user",
-        element: <User />
+        element: <User />,
       },
       {
         path: "/not-user",
-        element: <NotUser />
+        element: <NotUser />,
       },
-    ]
+    ],
+  },
+  // {
+  //   path: "/zustand01",
+  //   element: <Zustand01 />,
+  // },
+  {
+    path: "/zustand",
+    element: <ZustandLayout />,
+    children: [
+      {
+        path: "02",
+        element: <Zustand02 />,
+      },
+      {
+        path: "03",
+        element: <Zustand03 />,
+      },
+    ],
   },
   {
     path: "*",
-    element: <NotFound />
-  }
-])
+    element: <NotFound />,
+  },
+]);
 
 export default router;

@@ -27,15 +27,18 @@ export const RouteProvider = ({ children }) => {
     userAddress: "",
     userPhone: "",
   });
+  const [isLogin, setIsLogin] = useState(false);
 
   const value = {
     state: {
       previousUrl: previousUrl,
       user: user,
+      isLogin: isLogin,
     },
     actions: {
       setPreviousUrl: setPreviousUrl,
       setUser: setUser,
+      setIsLogin: setIsLogin,
     },
   };
 
